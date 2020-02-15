@@ -5,7 +5,7 @@ module.exports = {
   async index(req, res) {
     const { user_id } = req.params;
 
-    const user = User.findByPk(user_id, {
+    const user = await User.findByPk(user_id, {
       include: { association: 'addresses' }
     });
 
